@@ -79,7 +79,7 @@ const HomePage = () => {
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
   const [validationErrors, setValidationErrors] = useState<string[]>([]);
   const webcamRef = useRef<Webcam>(null);
-  const progressInterval = useRef<NodeJS.Timeout | null>(null);
+  const progressInterval = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const previewImage = useMemo(() => capturedImage || selectedImage, [capturedImage, selectedImage]);
 
